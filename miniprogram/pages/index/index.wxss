@@ -35,7 +35,7 @@ page {
 }
 
 .userinfo {
-  padding-left: 120rpx;
+  padding-left: 80rpx;
 }
 
 .userinfo-avatar {

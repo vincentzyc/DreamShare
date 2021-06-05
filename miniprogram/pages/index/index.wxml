@@ -7,6 +7,9 @@
       <view class="userinfo-block-avatar" bindtap="bindViewTap">
         <open-data type="userAvatarUrl"></open-data>
       </view>
+      <view class="userinfo-nickname-wrapper">
+        <open-data type="userNickName"></open-data>
+      </view>
     </block>
     <block wx:elif="{{!hasUserInfo}}">
       <button wx:if="{{canIUseGetUserProfile}}" bindtap="getUserProfile" class="userinfo-avatar"
@@ -17,10 +20,7 @@
     <block wx:else>
       <image bindtap="bindViewTap" class="userinfo-block-avatar" src="{{avatarUrl}}" mode="cover"></image>
     </block>
-    <view class="userinfo-nickname-wrapper">
-      <text>Dream Share</text>
-      <button class="userinfo-nickname" bindtap="onGetOpenid">点击获取 openid</button>
-    </view>
+      <!-- <button class="userinfo-nickname" bindtap="onGetOpenid">点击获取 openid</button> -->
   </view>
 
   <view class="dream-share">
