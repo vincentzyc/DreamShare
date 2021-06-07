@@ -39,11 +39,11 @@
 
 
   <!-- 操作数据库 -->
-  <!-- <view class="uploader">
+  <view class="uploader">
     <navigator url="../databaseGuide/databaseGuide" open-type="navigate" class="uploader-text">
       <text>前端操作数据库</text>
     </navigator>
-  </view> -->
+  </view>
 
   <!-- 即时通信 -->
   <!-- <view class="uploader">
@@ -60,11 +60,12 @@
   </view> -->
 
   <!-- 云调用 -->
-  <!-- <view class="uploader">
+  <view class="uploader">
     <navigator url="../openapi/openapi" open-type="navigate" class="uploader-text">
       <text>云调用</text>
     </navigator>
-  </view> -->
+  </view>
 
 
 </view>
+
