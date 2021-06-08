@@ -7,7 +7,7 @@ page {
   justify-content: flex-start;
 }
 
-.dream-share{
+.dream-share {
   text-align: center;
   height: 160rpx;
   line-height: 160rpx;
@@ -20,7 +20,9 @@ page {
   font-size: 32rpx;
 }
 
-.userinfo, .uploader, .tunnel {
+.userinfo,
+.uploader,
+.tunnel {
   margin-top: 40rpx;
   height: 140rpx;
   width: 100%;
@@ -34,8 +36,8 @@ page {
   transition: all 300ms ease;
 }
 
-.userinfo {
-  padding-left: 80rpx;
+.userinfo-login {
+  margin-right: 40rpx;
 }
 
 .userinfo-avatar {
@@ -50,7 +52,7 @@ page {
 .userinfo-block-avatar {
   width: 100rpx;
   height: 100rpx;
-  margin: 20rpx;
+  margin: 40rpx;
   border-radius: 50%;
   overflow: hidden;
 }
@@ -82,7 +84,8 @@ page {
   flex: 1;
 }
 
-.uploader, .tunnel {
+.uploader,
+.tunnel {
   height: auto;
   padding: 0 0 0 40rpx;
   flex-direction: column;
@@ -90,7 +93,8 @@ page {
   box-sizing: border-box;
 }
 
-.uploader-text, .tunnel-text {
+.uploader-text,
+.tunnel-text {
   width: 100%;
   line-height: 52px;
   font-size: 34rpx;
