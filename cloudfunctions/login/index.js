@@ -29,27 +29,25 @@ exports.main = async (event, context) => {
   const openid = wxContext.OPENID
   //获取数据库中有没有当前用户的信息
   var res= await db.collection("user").where({
-    openid:openid
+    _openid:openid
   }).count()
 
   if(res.total>0){
-    return await db.collection('user').where({
-      openid:openid
+    await db.collection('user').where({
+      _openid:openid
     }).update({
       data: {
         last_login_time: Date.now().toString()
       }
     })
   }else{
-    return await db.collection('user').add({
+    await db.collection('user').add({
       data: {
         user_type: 1,
         register_time: Date.now().toString()
       }
     })
   }
-
-
 
   return {
     event,
