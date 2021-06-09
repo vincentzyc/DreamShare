@@ -18,12 +18,38 @@ cloud.init({
 exports.main = async (event, context) => {
   console.log(event)
   console.log(context)
+  const db = wx.cloud.database()
 
   // 可执行其他自定义逻辑
   // console.log 的内容可以在云开发云函数调用日志查看
 
   // 获取 WX Context (微信调用上下文)，包括 OPENID、APPID、及 UNIONID（需满足 UNIONID 获取条件）等信息
   const wxContext = cloud.getWXContext()
+
+  const openid = wxContext.OPENID
+  //获取数据库中有没有当前用户的信息
+  var res= await db.collection("user").where({
+    openid:openid
+  }).count()
+
+  if(res.total>0){
+    return await db.collection('user').where({
+      openid:openid
+    }).update({
+      data: {
+        last_login_time: Date.now().toString()
+      }
+    })
+  }else{
+    return await db.collection('user').add({
+      data: {
+        user_type: 1,
+        register_time: Date.now().toString()
+      }
+    })
+  }
+
+
 
   return {
     event,
