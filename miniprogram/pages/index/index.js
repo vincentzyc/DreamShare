@@ -7,7 +7,6 @@ Page({
     userInfo: {},
     openid: '',
     hasUserInfo: false,
-    requestResult: '',
     // canIUseOpenData:false
     canIUseOpenData: wx.canIUse('open-data.type.userAvatarUrl') // 如需尝试获取用户信息可改为false
   },
@@ -19,8 +18,12 @@ Page({
       })
       return
     }
+    this.onLogin()
   },
   onLogin: function () {
+    // wx.showLoading({
+    //   title: '登录中',
+    // })
     wx.cloud.callFunction({
       name: 'login',
       data: {},
@@ -36,6 +39,9 @@ Page({
           title: '获取 openid 失败，请检查是否有部署 login 云函数',
         })
         console.log('[云函数] [login] 获取 openid 失败，请检查是否有部署云函数，错误信息：', err)
+      },
+      complete: ()=>{
+        // wx.hideLoading()
       }
     })
   },
