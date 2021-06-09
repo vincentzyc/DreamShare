@@ -11,36 +11,35 @@ cloud.init({
 
 /**
  * 这个示例将经自动鉴权过的小程序用户 openid 返回给小程序端
- * 
  * event 参数包含小程序端调用传入的 data
- * 
  */
 exports.main = async (event, context) => {
   console.log(event)
   console.log(context)
-  const db = cloud.database()
 
   // 可执行其他自定义逻辑
   // console.log 的内容可以在云开发云函数调用日志查看
+
+  const db = cloud.database()
 
   // 获取 WX Context (微信调用上下文)，包括 OPENID、APPID、及 UNIONID（需满足 UNIONID 获取条件）等信息
   const wxContext = cloud.getWXContext()
 
   const openid = wxContext.OPENID
   //获取数据库中有没有当前用户的信息
-  var res= await db.collection("user").where({
-    _openid:openid
+  var res = await db.collection("user").where({
+    _openid: openid
   }).count()
 
-  if(res.total>0){
+  if (res.total > 0) {
     await db.collection('user').where({
-      _openid:openid
+      _openid: openid
     }).update({
       data: {
         last_login_time: Date.now().toString()
       }
     })
-  }else{
+  } else {
     await db.collection('user').add({
       data: {
         user_type: 1,
