@@ -6,6 +6,7 @@ Page({
     avatarUrl: './user-unlogin.png',
     userInfo: {},
     openid: '',
+    userType: 1,
     hasUserInfo: false,
     // canIUseOpenData:false
     canIUseOpenData: wx.canIUse('open-data.type.userAvatarUrl') // 如需尝试获取用户信息可改为false
@@ -29,8 +30,10 @@ Page({
       data: {},
       success: res => {
         app.globalData.openid = res.result.openid
+        app.globalData.userType = res.result.userType
         this.setData({
-          openid: res.result.openid
+          openid: res.result.openid,
+          userType: res.result.userType
         })
       },
       fail: err => {
@@ -40,7 +43,7 @@ Page({
         })
         console.log('[云函数] [login] 获取 openid 失败，请检查是否有部署云函数，错误信息：', err)
       },
-      complete: ()=>{
+      complete: () => {
         // wx.hideLoading()
       }
     })
