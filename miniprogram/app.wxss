@@ -6,6 +6,10 @@
   box-sizing: border-box;
 } 
 
+.widthfull{
+  width: 100%;
+}
+
 button {
   background: initial;
 }
