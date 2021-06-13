@@ -27,7 +27,7 @@
   </view>
 
   <view class="uploader">
-    <image class="code-image" src="../../images/code-db-onAdd.png" mode="aspectFit"></image>
+    <image class="code-image" src="../../images/logo.png" mode="aspectFit"></image>
   </view>
 
   <!-- 上传图片 -->
@@ -40,10 +40,9 @@
     </view>
   </view> -->
 
-  <!-- 新建云函数 -->
   <view class="uploader">
     <navigator url="../map/map" open-type="navigate" class="uploader-text">
-      <text>地图</text>
+      <text>位置</text>
     </navigator>
   </view>
 
