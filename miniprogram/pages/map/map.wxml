@@ -1,11 +1,9 @@
-<!-- <template name="map"> -->
-  <view class="container widthfull">
-    <view class="page-body" style="width: 100%; height: 300px;">
-      <view class="page-section page-section-gap">
-        <map style="width: 100%; height: 300px;" latitude="{{latitude}}" longitude="{{longitude}}" markers="{{markers}}"
-          covers="{{covers}}">
-        </map>
-      </view>
+<view class="container widthfull">
+  <view class="page-body" style="width: 100%; height: 300px;">
+    <view class="page-section page-section-gap">
+      <map style="width: 100%; height: 300px;" latitude="{{latitude}}" longitude="{{longitude}}" markers="{{markers}}"
+        covers="{{covers}}">
+      </map>
     </view>
   </view>
-<!-- </template> -->
+</view>
