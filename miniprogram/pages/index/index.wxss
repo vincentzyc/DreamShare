@@ -21,8 +21,7 @@ page {
 }
 
 .userinfo,
-.uploader,
-.tunnel {
+.uploader{
   margin-top: 40rpx;
   height: 140rpx;
   width: 100%;
@@ -84,8 +83,7 @@ page {
   flex: 1;
 }
 
-.uploader,
-.tunnel {
+.uploader{
   height: auto;
   padding: 0 0 0 40rpx;
   flex-direction: column;
@@ -93,8 +91,7 @@ page {
   box-sizing: border-box;
 }
 
-.uploader-text,
-.tunnel-text {
+.uploader-text{
   width: 100%;
   line-height: 52px;
   font-size: 34rpx;
@@ -118,61 +115,9 @@ page {
 }
 
 .tunnel {
-  padding: 0 0 0 40rpx;
+  padding: 40rpx;
 }
 
-.tunnel-text {
-  position: relative;
-  color: #222;
-  display: flex;
-  flex-direction: row;
-  align-content: center;
-  justify-content: space-between;
-  box-sizing: border-box;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-.tunnel-text:first-child {
-  border-top: none;
-}
-
-.tunnel-switch {
-  position: absolute;
-  right: 20rpx;
-  top: -2rpx;
-}
-
-.disable {
-  color: #888;
-}
-
-.service {
-  position: fixed;
-  right: 40rpx;
-  bottom: 40rpx;
-  width: 140rpx;
-  height: 140rpx;
-  border-radius: 50%;
-  background: linear-gradient(#007aff, #0063ce);
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
-  display: flex;
-  align-content: center;
-  justify-content: center;
-  transition: all 300ms ease;
-}
-
-.service-button {
-  position: absolute;
-  top: 40rpx;
-}
-
-.service:active {
-  box-shadow: none;
-}
-
-.request-text {
-  padding: 20rpx 0;
-  font-size: 24rpx;
-  line-height: 36rpx;
-  word-break: break-all;
+.tunnel-image{
+  width: 100%;
 }

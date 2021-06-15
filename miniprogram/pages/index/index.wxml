@@ -26,8 +26,8 @@
     <text>君享英语，助你享受英语</text>
   </view>
 
-  <view class="uploader">
-    <image class="code-image" src="../../images/logo.png" mode="aspectFit"></image>
+  <view class="tunnel">
+    <image class="tunnel-image" src="../../images/logo.png" mode="aspectFit"></image>
   </view>
 
   <!-- 地图 -->
