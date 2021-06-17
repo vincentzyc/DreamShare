@@ -28,12 +28,12 @@
   </view>
 
   <view class="tunnel">
-    <image class="tunnel-image" src="../../images/sansui.jpg" mode="aspectFit"></image>
+    <image class="tunnel-image" src="../../images/sansui.jpg" mode="widthFix"></image>
   </view>
 
   <view class="tunnel">
-    <text class="text-center">联系方式</text>
-    <image class="tunnel-image" src="../../images/wechat.png" mode="aspectFit"></image>
+    <text>联系方式</text>
+    <image class="tunnel-image" src="../../images/wechat.png" mode="widthFix"></image>
   </view>
 
   <!-- 地图 -->
