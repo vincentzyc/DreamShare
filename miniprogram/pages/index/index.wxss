@@ -8,9 +8,9 @@ page {
 }
 
 .dream-share {
-  text-align: center;
-  height: 160rpx;
-  line-height: 160rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   background: #fff;
   border: 1px solid rgba(0, 0, 0, 0.1);
@@ -18,6 +18,13 @@ page {
   border-right: none;
   margin-top: 40rpx;
   font-size: 32rpx;
+}
+.ds-title{
+margin-left: 20rpx;
+}
+.logo{
+  width: 120rpx;
+  height: 120rpx;
 }
 
 .userinfo,
