@@ -23,7 +23,7 @@
   </view>
 
   <view class="dream-share">
-    <image class="logo" src="../../images/logo1.png" mode="aspectFit"></image>
+    <image class="logo" src="../../images/logo.png" mode="aspectFit"></image>
     <text class="ds-title">君享英语，助你享受英语</text>
   </view>
 
