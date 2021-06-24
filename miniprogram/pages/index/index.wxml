@@ -42,11 +42,11 @@
 
   <view class="tunnel">
     <text>联系方式</text>
-    <image class="tunnel-image" src="../../images/wechat.png" mode="widthFix"></image>
+    <image bindtap="addwx" class="tunnel-image" src="../../images/wechat.png" mode="widthFix"></image>
   </view>
 
   <!-- 地图 -->
-  <ds-map class="widthfull"></ds-map>
+  <ds-map class="widthfull" style="margin-bottom:100rpx"></ds-map>
 
   <!-- 操作数据库 -->
   <!-- <view class="uploader" wx:if="{{userType===0}}">
@@ -68,6 +68,4 @@
       <text>云调用</text>
     </navigator>
   </view> -->
-
-
 </view>
