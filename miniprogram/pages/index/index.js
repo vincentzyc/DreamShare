@@ -61,5 +61,33 @@ Page({
         this.onLogin()
       }
     })
+  },
+  gotxdocszc(){
+    wx.navigateToMiniProgram({
+      appId: 'wxd45c635d754dbf59',
+      path: 'pages/detail/detail.html?url=https%3A%2F%2Fdocs.qq.com%2Fsheet%2FDWXJ1SlR0S1hXanJO%3Fu%3D10c9fbb89b964f1a9eb49f9fa136b8d6',
+      envVersion: 'release',
+      success(res) {
+        // 打开成功
+        console.log(res)
+      },
+      fail: function (e) {
+        console.log(e)
+      }
+    })
+  },
+  gotxdocssr(){
+    wx.navigateToMiniProgram({
+      appId: 'wxd45c635d754dbf59',
+      path: 'pages/detail/detail.html?url=https%3A%2F%2Fdocs.qq.com%2Fsheet%2FDWUxTdlJVd29Fcmd1%3Fu%3D10c9fbb89b964f1a9eb49f9fa136b8d6',
+      envVersion: 'release',
+      success(res) {
+        // 打开成功
+        console.log(res)
+      },
+      fail: function (e) {
+        console.log(e)
+      }
+    })
   }
 })
