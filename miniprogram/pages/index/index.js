@@ -76,6 +76,7 @@ Page({
       }
     })
   },
+  //打开腾讯文档
   gotxdocssr(){
     wx.navigateToMiniProgram({
       appId: 'wxd45c635d754dbf59',
@@ -90,6 +91,7 @@ Page({
       }
     })
   },
+  //添加微信
   addwx(){
     wx.previewImage({
       current: 'https://636c-cloud1-2gm18tth32ee91d4-1305690004.tcb.qcloud.la/wechat.png?sign=461eeddb3749f6cc25fef84db187aee0&t=1624551272', // 当前显示图片的http链接
