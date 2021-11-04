@@ -22,10 +22,10 @@
     </block>
   </view>
 
-  <view class="dream-share">
+  <!-- <view class="dream-share">
     <image class="logo" src="../../images/logo.png" mode="aspectFit"></image>
     <text class="ds-title">君享英语，助你享受英语</text>
-  </view>
+  </view> -->
 
 
   <view class="uploader" wx:if="{{userType===0}}">
