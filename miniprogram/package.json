@@ -1,0 +1,12 @@
+
+{
+  "name": "DreamShare",
+  "version": "1.0.0",
+  "description": "DreamShare",
+  "main": "app.js",
+  "author": "Nuage",
+  "license": "ISC",
+  "dependencies": {
+    "@vant/weapp": "^1.9.2"
+  }
+}
