@@ -1,5 +1,6 @@
 {
   "usingComponents": {
-    "ds-map": "../map/map"
+    "ds-map": "../map/map",
+    "van-button": "@vant/weapp/button/index"
   }
 }

@@ -27,13 +27,14 @@
     <text class="ds-title">君享英语，助你享受英语</text>
   </view> -->
 
+  <van-button type="primary">Vant 按钮</van-button>
 
   <view class="uploader" wx:if="{{userType===0}}">
     <text class="uploader-text" bindtap="gotxdocszc">DS支出表</text>
   </view>
 
   <view class="uploader" wx:if="{{userType===0}}">
-    <text class="uploader-text" bindtap="gotxdocssr">DS收入表</text>
+    <text class="uploader-text" bindtap="gotxdocssr">DS收入表1</text>
   </view>
 
   <view class="tunnel">
