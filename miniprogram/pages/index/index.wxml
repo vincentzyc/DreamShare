@@ -24,7 +24,7 @@
 
   <!-- <view class="dream-share">
     <image class="logo" src="../../images/logo.png" mode="aspectFit"></image>
-    <text class="ds-title">君享英语，助你享受英语</text>
+    <text class="ds-title">Dream Share</text>
   </view> -->
 
   <view class="widthfull">
@@ -49,7 +49,8 @@
   </view>
 
   <view class="tunnel">
-    <image class="tunnel-image" src="../../images/sansui.jpg" mode="widthFix"></image>
+    <!-- <image class="tunnel-image" src="../../images/sansui.jpg" mode="widthFix"></image> -->
+    <image class="tunnel-image" src="../../assets/images/banner.jpg" mode="widthFix"></image>
   </view>
 
   <view class="tunnel">
