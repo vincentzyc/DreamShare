@@ -3,6 +3,35 @@ const app = getApp()
 
 Page({
   data: {
+    mainActiveIndex: 0,
+    activeId: null,
+    items: [
+      {
+        // 导航名称
+        text: '所有城市',
+        // 导航名称右上角徽标，1.5.0 版本开始支持
+        badge: 3,
+        // 是否在导航名称右上角显示小红点，1.5.0 版本开始支持
+        dot: true,
+        // 禁用选项
+        disabled: false,
+        // 该导航下所有的可选项
+        children: [
+          {
+            // 名称
+            text: '温州',
+            // id，作为匹配选中状态的标识
+            id: 1,
+            // 禁用选项
+            disabled: true,
+          },
+          {
+            text: '杭州',
+            id: 2,
+          },
+        ],
+      },
+    ],
     date: '',
     show: false,
     avatarUrl: './user-unlogin.png',
@@ -56,6 +85,17 @@ Page({
   onClose() {
     this.setData({ show: false });
   },
+  onClickNav({ detail = {} }) {
+    this.setData({
+      mainActiveIndex: detail.index || 0,
+    });
+  },
+
+  onClickItem({ detail = {} }) {
+    const activeId = this.data.activeId === detail.id ? null : detail.id;
+
+    this.setData({ activeId });
+  },
   formatDate(date) {
     date = new Date(date);
     return `${date.getMonth() + 1}/${date.getDate()}`;
@@ -80,7 +120,7 @@ Page({
       }
     })
   },
-  gotxdocszc(){
+  gotxdocszc() {
     wx.navigateToMiniProgram({
       appId: 'wxd45c635d754dbf59',
       path: 'pages/detail/detail.html?url=https%3A%2F%2Fdocs.qq.com%2Fsheet%2FDWXJ1SlR0S1hXanJO%3Fu%3D10c9fbb89b964f1a9eb49f9fa136b8d6',
@@ -95,7 +135,7 @@ Page({
     })
   },
   //打开腾讯文档
-  gotxdocssr(){
+  gotxdocssr() {
     wx.navigateToMiniProgram({
       appId: 'wxd45c635d754dbf59',
       path: 'pages/detail/detail.html?url=https%3A%2F%2Fdocs.qq.com%2Fsheet%2FDWUxTdlJVd29Fcmd1%3Fu%3D10c9fbb89b964f1a9eb49f9fa136b8d6',
@@ -110,7 +150,7 @@ Page({
     })
   },
   //添加微信
-  addwx(){
+  addwx() {
     wx.previewImage({
       current: 'https://636c-cloud1-2gm18tth32ee91d4-1305690004.tcb.qcloud.la/wechat.png?sign=461eeddb3749f6cc25fef84db187aee0&t=1624551272', // 当前显示图片的http链接
       urls: ['https://636c-cloud1-2gm18tth32ee91d4-1305690004.tcb.qcloud.la/wechat.png?sign=461eeddb3749f6cc25fef84db187aee0&t=1624551272'] // 需要预览的图片http链接列表
