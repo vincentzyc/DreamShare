@@ -19,16 +19,18 @@ page {
   margin-top: 40rpx;
   font-size: 32rpx;
 }
-.ds-title{
-margin-left: 20rpx;
+
+.ds-title {
+  margin-left: 20rpx;
 }
-.logo{
+
+.logo {
   width: 120rpx;
   height: 120rpx;
 }
 
 .userinfo,
-.uploader{
+.uploader {
   margin-top: 40rpx;
   height: 140rpx;
   width: 100%;
@@ -90,7 +92,7 @@ margin-left: 20rpx;
   flex: 1;
 }
 
-.uploader{
+.uploader {
   height: auto;
   padding: 0 0 0 40rpx;
   flex-direction: column;
@@ -98,7 +100,7 @@ margin-left: 20rpx;
   box-sizing: border-box;
 }
 
-.uploader-text{
+.uploader-text {
   width: 100%;
   line-height: 52px;
   font-size: 34rpx;
@@ -125,6 +127,9 @@ margin-left: 20rpx;
   padding: 40rpx;
 }
 
-.tunnel-image{
+.full-image {
   width: 100%;
+  padding: 0;
+  margin: 0;
+  display: flex;
 }
