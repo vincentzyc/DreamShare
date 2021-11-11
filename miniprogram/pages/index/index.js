@@ -7,23 +7,11 @@ Page({
     activeId: null,
     items: [
       {
-        // 导航名称
-        text: '所有城市',
-        // 导航名称右上角徽标，1.5.0 版本开始支持
-        badge: 3,
-        // 是否在导航名称右上角显示小红点，1.5.0 版本开始支持
-        dot: true,
-        // 禁用选项
-        disabled: false,
-        // 该导航下所有的可选项
+        text: '所有城市', // 导航名称
         children: [
           {
-            // 名称
             text: '温州',
-            // id，作为匹配选中状态的标识
-            id: 1,
-            // 禁用选项
-            disabled: true,
+            id: 1
           },
           {
             text: '杭州',
@@ -31,9 +19,20 @@ Page({
           },
         ],
       },
+      {
+        text: '所有城市1', // 导航名称
+        children: [
+          {
+            text: '温州1',
+            id: 11
+          },
+          {
+            text: '杭州1',
+            id: 22,
+          },
+        ],
+      },
     ],
-    date: '',
-    show: false,
     avatarUrl: './user-unlogin.png',
     userInfo: {},
     openid: '',
@@ -79,12 +78,6 @@ Page({
       }
     })
   },
-  onDisplay() {
-    this.setData({ show: true });
-  },
-  onClose() {
-    this.setData({ show: false });
-  },
   onClickNav({ detail = {} }) {
     this.setData({
       mainActiveIndex: detail.index || 0,
@@ -99,12 +92,6 @@ Page({
   formatDate(date) {
     date = new Date(date);
     return `${date.getMonth() + 1}/${date.getDate()}`;
-  },
-  onConfirm(event) {
-    this.setData({
-      show: false,
-      date: this.formatDate(event.detail),
-    });
   },
   getUserProfile() {
     // 推荐使用wx.getUserProfile获取用户信息，开发者每次通过该接口获取用户个人信息均需用户确认，开发者妥善保管用户快速填写的头像昵称，避免重复弹窗
