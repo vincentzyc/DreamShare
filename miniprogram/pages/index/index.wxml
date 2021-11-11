@@ -4,16 +4,12 @@
   </view>
 
   <view class="widthfull">
+    <CityPicker />
     <van-cell-group inset>
       <van-cell title="单元格" value="内容" />
       <van-cell title="单元格" value="内容" label="描述信息" />
     </van-cell-group>
     <van-button type="primary" block>Vant 按钮</van-button>
-  </view>
-
-  <view class="widthfull">
-    <van-cell title="选择单个日期" value="{{ date }}" bind:click="onDisplay" />
-    <van-calendar show="{{ show }}" bind:close="onClose" bind:confirm="onConfirm" />
   </view>
 
   <view class="widthfull">
