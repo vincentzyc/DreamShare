@@ -1,1 +1,6 @@
-<text>这是一个城市选择组件</text>
+<view class="widthfull">
+  <van-cell title="选择城市" is-link arrow-direction="down" bindtap="showPopup" />
+  <van-popup show="{{ show }}" position="bottom" custom-style="height: 50%;" bind:close="onClose">
+    <van-area area-list="{{ areaList }}" />
+  </van-popup>
+</view>
