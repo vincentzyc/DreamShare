@@ -1,0 +1,3 @@
+<view>
+	<lucky-wheel id="myLucky" width="600rpx" height="600rpx" blocks="{{blocks}}" prizes="{{prizes}}" buttons="{{buttons}}" bindstart="start" bindend="end" />
+</view>
