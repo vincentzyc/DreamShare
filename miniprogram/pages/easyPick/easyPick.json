@@ -1,0 +1,5 @@
+{
+	"usingComponents": {
+		"lucky-wheel": "@lucky-canvas/mini/lucky-wheel/index"
+	}
+}
