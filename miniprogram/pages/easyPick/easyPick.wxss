@@ -1,1 +1,21 @@
 /* pages/easyPick.wxss */
+.input-wrapper {
+  margin: 20rpx;
+  align-items: center;
+}
+
+.input-item {
+  display: flex;
+  margin-top: 10rpx;
+}
+
+.weui-input {
+  margin-right: 10rpx;
+  flex: auto;
+  padding: 10rpx;
+  border: 2rpx solid #eee;
+}
+
+.add-icon {
+  transform: rotateZ(45deg)
+}
