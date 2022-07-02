@@ -1,4 +1,7 @@
 /* pages/easyPick.wxss */
+.ep-title{
+  margin: 20rpx;
+}
 .input-wrapper {
   margin: 20rpx;
   align-items: center;

@@ -1,5 +1,5 @@
 <view>
-  <view>请输入选项</view>
+  <view class="ep-title">请输入选项：</view>
   <view class="input-wrapper">
     <view class="input-item" wx:for="{{prizes}}" wx:key="index">
       <input class="weui-input" value="{{item.fonts[0].text}}" maxlength="16" placeholder="最大输入长度为16" />
