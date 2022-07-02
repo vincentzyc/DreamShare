@@ -27,7 +27,6 @@ Page({
     setTimeout(() => {
       // 3s 后得到中奖索引
       const index = parseInt(Math.random() * this.data.prizes.length)
-      console.log(index);
       // 调用stop方法然后缓慢停止
       child.lucky.stop(index)
     }, 3000)
