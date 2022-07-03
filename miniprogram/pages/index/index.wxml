@@ -1,6 +1,6 @@
 <view class="container">
 	<view class="widthfull">
-		<image class="full-image" src="../../assets/images/1.jpg" mode="widthFix"></image>
+		<image class="full-image" src="../../assets/images/banner.jpg" mode="widthFix"></image>
 	</view>
 
 	<view class="widthfull">
@@ -20,10 +20,5 @@
 
 	<view class="widthfull">
 		<van-tree-select items="{{ items }}" main-active-index="{{ mainActiveIndex }}" active-id="{{ activeId }}" bind:click-nav="onClickNav" bind:click-item="onClickItem" />
-	</view>
-
-	<view class="widthfull">
-		<image class="full-image" src="../../assets/images/2.jpg" mode="widthFix"></image>
-		<image class="full-image" src="../../assets/images/3.jpg" mode="widthFix"></image>
 	</view>
 </view>
