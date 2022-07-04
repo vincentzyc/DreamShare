@@ -1,0 +1,4 @@
+/* pages/easyPick.wxss */
+.memo-title{
+  margin: 20rpx;
+}
