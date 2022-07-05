@@ -8,7 +8,7 @@ Page({
       { text: '选项2', background: '#b8c5f2' },
     ],
   },
-  addMemoss() {
+  addMemos() {
     this.data.memos.push({ text: '选项' + (this.data.memos.length + 1), background: this.getRandomColor() })
     this.setData({
       memos: this.data.memos
