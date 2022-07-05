@@ -8,6 +8,7 @@
   "dependencies": {
     "@lucky-canvas/mini": "^0.0.7",
     "@vant/area-data": "^1.1.3",
-    "@vant/weapp": "^1.9.2"
+    "@vant/weapp": "^1.9.2",
+    "nanoid": "^4.0.0"
   }
 }
