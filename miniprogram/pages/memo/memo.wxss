@@ -1,4 +1,9 @@
 /* pages/easyPick.wxss */
-.memo-title{
+.memo-title {
   margin: 20rpx;
+}
+
+.add-icon {
+  margin-top: 60rpx;
+  transform: rotateZ(45deg)
 }
