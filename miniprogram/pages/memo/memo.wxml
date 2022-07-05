@@ -1,4 +1,9 @@
 <view>
-  <view class="memo-title">备忘录：</view>
-  <view wx:for="{{memos}}" wx:key="index">{{item.text}}</view>
+  <view wx:if="{{memos.length===0}}">
+    <view wx:for="{{memos}}" wx:key="index">{{item.text}}</view>
+  </view>
+  <view wx:else class="text-center heightfull">
+    <icon class="add-icon" type="cancel" size="64" bindtap="addMemos"></icon>
+    <view class="c666">新增记事</view>
+  </view>
 </view>
