@@ -1,168 +1,331 @@
-/**app.wxss**/
+/**app.css**/
+::-webkit-scrollbar {
+	width: 0;
+	height: 0;
+	color: transparent;
+}
+
 .container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  box-sizing: border-box;
+	position: relative;
+	height: 100%;
+	width: 100%;
+	box-sizing: border-box;
 }
 
 .widthfull {
-  width: 100%;
+	width: 100%;
+}
+
+.heightfull {
+	height: 100%;
+}
+
+.wrapper {
+	display: flex;
+	position: relative;
+	height: 100%;
+	width: 100%;
+	flex-direction: column;
+	box-sizing: border-box;
+}
+
+.page-wrapper {
+	background-color: #f4f4f4;
+	box-sizing: border-box;
+	width: 100%;
+	min-height: 100vh;
+}
+
+.row {
+	position: relative;
+	width: 100%;
+}
+
+.relative {
+	position: relative;
+}
+
+.text-left {
+	text-align: left;
 }
 
 .text-center {
-  text-align: center;
+	text-align: center;
 }
 
-button {
-  background: initial;
+.text-right {
+	text-align: right;
 }
 
-button:focus {
-  outline: 0;
+.pull-right {
+	float: right !important;
 }
 
-button::after {
-  border: none;
+.pull-left {
+	float: left !important;
 }
 
-
-page {
-  background: #f6f6f6;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+.block {
+	display: block !important;
 }
 
-.userinfo,
-.uploader,
-.tunnel {
-  margin-top: 40rpx;
-  height: 140rpx;
-  width: 100%;
-  background: #fff;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-left: none;
-  border-right: none;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  transition: all 300ms ease;
+.inline {
+	display: inline !important;
 }
 
-.userinfo-avatar {
-  width: 100rpx;
-  height: 100rpx;
-  margin: 20rpx;
-  border-radius: 50%;
-  background-size: cover;
-  background-color: white;
+.inline-block {
+	display: inline-block !important;
 }
 
-.userinfo-avatar:after {
-  border: none;
+.clearfix:before,
+.clearfix:after {
+	display: table;
+	content: ' ';
 }
 
-.userinfo-nickname {
-  font-size: 32rpx;
-  color: #007aff;
-  background-color: white;
-  background-size: cover;
+.clearfix:after {
+	clear: both;
 }
 
-.userinfo-nickname::after {
-  border: none;
+.white-space-pre {
+	white-space: pre !important
 }
 
-.uploader,
-.tunnel {
-  height: auto;
-  padding: 0 0 0 40rpx;
-  flex-direction: column;
-  align-items: flex-start;
-  box-sizing: border-box;
+.white-space-pre-wrap {
+	white-space: pre-wrap !important
 }
 
-.uploader-text,
-.tunnel-text {
-  width: 100%;
-  line-height: 52px;
-  font-size: 34rpx;
-  color: #007aff;
+/*flex*/
+
+.flex {
+	display: flex !important;
 }
 
-.uploader-container {
-  width: 100%;
-  height: 400rpx;
-  padding: 20rpx 20rpx 20rpx 0;
-  display: flex;
-  align-content: center;
-  justify-content: center;
-  box-sizing: border-box;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
+.flex-inline {
+	display: inline-flex !important;
 }
 
-.uploader-image {
-  width: 100%;
-  height: 360rpx;
+/*flex-direction*/
+
+.flex-row {
+	flex-direction: row;
 }
 
-.tunnel {
-  padding: 0 0 0 40rpx;
+.flex-column {
+	flex-direction: column;
 }
 
-.tunnel-text {
-  position: relative;
-  color: #222;
-  display: flex;
-  flex-direction: row;
-  align-content: center;
-  justify-content: space-between;
-  box-sizing: border-box;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
+.row-reverse {
+	flex-direction: row-reverse;
 }
 
-.tunnel-text:first-child {
-  border-top: none;
+.column-reverse {
+	flex-direction: column-reverse;
 }
 
-.tunnel-switch {
-  position: absolute;
-  right: 20rpx;
-  top: -2rpx;
+/*flex-wrap*/
+
+.flex-wrap {
+	flex-wrap: wrap;
 }
 
-.disable {
-  color: #888;
+.flex-nowrap {
+	flex-wrap: nowrap;
 }
 
-.service {
-  position: fixed;
-  right: 40rpx;
-  bottom: 40rpx;
-  width: 140rpx;
-  height: 140rpx;
-  border-radius: 50%;
-  background: linear-gradient(#007aff, #0063ce);
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
-  display: flex;
-  align-content: center;
-  justify-content: center;
-  transition: all 300ms ease;
+/*justify-content*/
+.space-around {
+	justify-content: space-around;
 }
 
-.service-button {
-  position: absolute;
-  top: 40rpx;
+.space-between {
+	justify-content: space-between;
 }
 
-.service:active {
-  box-shadow: none;
+.justify-start {
+	justify-content: flex-start;
 }
 
-.request-text {
-  padding: 20rpx 0;
-  font-size: 24rpx;
-  line-height: 36rpx;
-  word-break: break-all;
+.justify-end {
+	justify-content: flex-end;
+}
+
+.justify-center {
+	justify-content: center;
+}
+
+/*align-items*/
+
+.stretch {
+	align-items: stretch;
+}
+
+.align-start {
+	align-items: flex-start;
+}
+
+.align-end {
+	align-items: flex-end;
+}
+
+.align-middle {
+	align-items: center;
+}
+
+.flex-center {
+	justify-content: center;
+	align-items: center;
+}
+
+/*order*/
+
+.flex-first {
+	order: -1;
+}
+
+.flex-last {
+	order: 1;
+}
+
+/*flex*/
+
+.flex-auto {
+	flex: auto;
+}
+
+.flex-none {
+	flex: none;
+}
+
+/*align-self*/
+
+.selft-stretch {
+	align-self: stretch;
+}
+
+.align-self-start {
+	align-self: flex-start;
+}
+
+.align-self-end {
+	align-self: flex-end;
+}
+
+.align-self-middle {
+	align-self: center;
+}
+
+/*flex end*/
+
+/*超出部分省略号*/
+
+.txtover {
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+.txtover-1 {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 1;
+	-webkit-box-orient: vertical;
+	word-break: break-all;
+}
+
+.txtover-2 {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+}
+
+.txtover-3 {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+}
+
+/*end*/
+.bg000 {
+	background-color: #000000;
+}
+.bgred {
+	background-color: #cf2726;
+}
+.bgffa51c {
+	background-color: #ffa51c;
+}
+.c666 {
+	color: #666
+}
+.c999 {
+	color: #999
+}
+.cred {
+	color: #cf2726;
+}
+.cblue {
+	color: #2174ff;
+}
+.fs12 {
+	font-size: 24rpx;
+}
+.fs14 {
+	font-size: 28rpx;
+}
+
+.pd10 {
+	padding: 20rpx;
+}
+.pd-b20 {
+	padding-bottom: 40rpx;
+}
+.mg10 {
+	margin: 20rpx;
+}
+.mg12 {
+	margin: 24rpx;
+}
+.mg15 {
+	margin: 30rpx;
+}
+.mg-t10 {
+	margin-top: 20rpx;
+}
+.mg-r5 {
+	margin-right: 10rpx;
+}
+.mg-b5 {
+	margin-bottom: 10rpx;
+}
+.mg-b10 {
+	margin-bottom: 20rpx;
+}
+.mg-l10 {
+	margin-left: 20rpx;
+}
+.mg-l15 {
+	margin-left: 30rpx;
+}
+.mg-b20 {
+	margin-bottom: 40rpx;
+}
+.lh20 {
+	line-height: 40rpx;
+}
+.lh24 {
+	line-height: 48rpx;
+}
+.bold {
+	font-weight: bold;
+}
+.text-center {
+	text-align: center;
+}
+.text-left {
+	text-align: left;
 }
