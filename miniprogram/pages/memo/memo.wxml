@@ -1,3 +1,4 @@
 <view>
   <view class="memo-title">备忘录：</view>
+  <view wx:for="{{memos}}" wx:key="index">{{item.text}}</view>
 </view>
