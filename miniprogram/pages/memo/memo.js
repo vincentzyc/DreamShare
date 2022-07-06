@@ -3,16 +3,14 @@ Page({
    * 页面的初始数据
    */
   data: {
-    memos: [
-      { text: '选项1', background: '#e9e8fe' },
-      { text: '选项2', background: '#b8c5f2' },
-    ],
+    memos: [],
   },
   addMemos() {
     this.data.memos.push({ text: '选项' + (this.data.memos.length + 1), background: this.getRandomColor() })
     this.setData({
       memos: this.data.memos
     })
+    console.log(this.data.memos);
   },
   getRandomColor() {
     return '#' + ('00000' + (Math.random() * 0x1000000 << 0).toString(16)).slice(-6);

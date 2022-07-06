@@ -1,5 +1,5 @@
 <view>
-  <view wx:if="{{memos.length===0}}">
+  <view wx:if="{{memos.length>0}}">
     <view wx:for="{{memos}}" wx:key="index">{{item.text}}</view>
   </view>
   <view wx:else class="text-center heightfull">
