@@ -3,7 +3,12 @@ Page({
    * 页面的初始数据
    */
   data: {
-    memos: [],
+    memos: [{
+      title: '备忘录标题',
+      text: '这是一个测试备忘录',
+      createTime: '2022-07-07: 07:07:07',
+      updateTime: '2022-07-07: 20:20:20',
+    }],
   },
   addMemos() {
     wx.navigateTo({
