@@ -15,7 +15,8 @@
     "pages/im/room/room",
     "pages/map/map",
     "pages/easyPick/easyPick",
-    "pages/memo/memo"
+    "pages/memo/memo",
+    "pages/addMemo/addMemo"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
