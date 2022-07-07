@@ -6,14 +6,17 @@ Page({
     memos: [],
   },
   addMemos() {
-    this.data.memos.push({ text: '选项' + (this.data.memos.length + 1), background: this.getRandomColor() })
-    this.setData({
-      memos: this.data.memos
+    wx.navigateTo({
+      url: '../addMemo/addMemo',
     })
+    // this.data.memos.push({ text: '选项' + (this.data.memos.length + 1), background: this.getRandomColor() })
+    // this.setData({
+    //   memos: this.data.memos
+    // })
   },
-  getRandomColor() {
-    return '#' + ('00000' + (Math.random() * 0x1000000 << 0).toString(16)).slice(-6);
-  },
+  // getRandomColor() {
+  //   return '#' + ('00000' + (Math.random() * 0x1000000 << 0).toString(16)).slice(-6);
+  // },
   /**
    * 生命周期函数--监听页面加载
    */
