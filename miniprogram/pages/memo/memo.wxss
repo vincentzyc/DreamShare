@@ -7,3 +7,17 @@
   margin-top: 60rpx;
   transform: rotateZ(45deg)
 }
+.memo-item{
+  margin: 20rpx;
+  padding: 20rpx;
+  box-shadow: 10rpx 10rpx 20rpx 10rpx #ccc;
+}
+.memo-item-title{
+  font-weight: bold;
+  font-size: 32rpx;
+}
+.memo-item-text{
+  margin-top: 10rpx;
+  font-size: 28rpx;
+  color: #999;
+}
