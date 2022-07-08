@@ -1,6 +1,13 @@
 <view>
   <view wx:if="{{memos.length>0}}">
-    <view wx:for="{{memos}}" wx:key="index">{{item.text}}</view>
+    <view wx:for="{{memos}}" wx:key="index">
+      <view>{{item.title}}</view>
+      <view>{{item.text}}</view>
+      <view>
+        <text>{{item.createTime}}</text>
+        <text>{{item.updateTime}}</text>
+      </view>
+    </view>
   </view>
   <view class="text-center heightfull">
     <icon class="add-icon" type="cancel" size="64" bindtap="addMemos"></icon>
