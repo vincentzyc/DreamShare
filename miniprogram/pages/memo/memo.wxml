@@ -3,9 +3,9 @@
     <view wx:for="{{memos}}" wx:key="index" class="memo-item">
       <view class="memo-item-title">{{item.title}}</view>
       <view class="memo-item-text">{{item.text}}</view>
-      <view>
-        <text>{{item.createTime}}</text>
-        <text>{{item.updateTime}}</text>
+      <view class="flex memo-item-time">
+        <text class="flex-auto">{{item.createTime}}</text>
+        <text class="flex-auto text-right">{{item.updateTime}}</text>
       </view>
     </view>
   </view>
