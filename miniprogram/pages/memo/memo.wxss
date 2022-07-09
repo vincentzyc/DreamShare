@@ -19,5 +19,10 @@
 .memo-item-text{
   margin-top: 10rpx;
   font-size: 28rpx;
-  color: #999;
+  color: #777;
+}
+.memo-item-time{
+  margin-top: 10rpx;
+  font-size: 24rpx;
+  color: #bbb;
 }
