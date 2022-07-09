@@ -1,2 +1,9 @@
-<!--pages/addMemo.wxml-->
-<text>pages/addMemo.wxml</text>
+<view class="addmemo-wrapper">
+  <view class="addmemo-title">
+    <van-field model:value="{{ title }}" placeholder="请输入标题" border="{{ false }}" input-align="center" />
+  </view>
+  <view class="addmemo-content">
+    <van-field input-class="addmemo-textarea" model:value="{{ message }}" type="textarea" placeholder="请输入内容" autosize="{{textareaSize}}" border="{{ false }}" />
+  </view>
+  <van-button type="primary" block>保 存</van-button>
+</view>
