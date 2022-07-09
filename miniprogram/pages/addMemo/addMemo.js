@@ -5,7 +5,13 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    title: '',
+    message: '',
+    textareaSize: { minHeight: 150 }
+  },
+  onChange(event) {
+    // event.detail 为当前输入的值
+    console.log(event.detail);
   },
 
   /**
