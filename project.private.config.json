@@ -20,6 +20,13 @@
           "query": "",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "addmemo",
+          "pathName": "pages/addMemo/addMemo",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }
