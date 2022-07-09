@@ -18,6 +18,9 @@ Page({
       },
     ],
   },
+  inputOption(e){
+    console.log(e);
+  },
   start() {
     // 获取抽奖组件实例
     const child = this.selectComponent('#myLucky')
