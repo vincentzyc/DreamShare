@@ -2,7 +2,7 @@
   <view class="ep-title">请输入选项：</view>
   <view class="input-wrapper">
     <view class="input-item" wx:for="{{prizes}}" wx:key="index">
-      <input class="weui-input" value="{{item.fonts[0].text}}" maxlength="16" placeholder="最大输入长度为16" bindinput="inputOption"/>
+      <input class="weui-input" value="{{item.fonts[0].text}}" maxlength="16" placeholder="最大输入长度为16" data-index="{{index}}" bindinput="inputOption"/>
       <icon class="add-icon" type="cancel" size="23" bindtap="addOptions" hidden="{{index!==prizes.length-1}}"></icon>
     </view>
   </view>
