@@ -1,9 +1,12 @@
 <view>
   <view class="ep-title">请输入选项：</view>
   <view class="input-wrapper">
-    <view class="input-item" wx:for="{{prizes}}" wx:key="index">
-      <input class="weui-input" value="{{item.fonts[0].text}}" maxlength="16" placeholder="最大输入长度为16" data-index="{{index}}" bindinput="inputOption"/>
-      <icon class="add-icon" type="cancel" size="23" bindtap="addOptions" hidden="{{index!==prizes.length-1}}"></icon>
+    <view class="flex align-middle input-item" wx:for="{{prizes}}" wx:key="index">
+      <input class="weui-input" value="{{item.fonts[0].text}}" maxlength="16" placeholder="最大输入长度为16" data-index="{{index}}" bindinput="inputOption" />
+      <image class="delete-icon" src="../../assets/svg/delete.svg" data-index="{{index}}" bindtap="deleteOptions"></image>
+    </view>
+    <view class="flex justify-end">
+      <icon class="add-icon" type="cancel" size="23" bindtap="addOptions"></icon>
     </view>
   </view>
   <lucky-wheel id="myLucky" width="600rpx" height="600rpx" blocks="{{blocks}}" prizes="{{prizes}}" buttons="{{buttons}}" bindstart="start" bindend="end" />
