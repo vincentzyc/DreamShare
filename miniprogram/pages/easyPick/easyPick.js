@@ -48,6 +48,13 @@ Page({
       content: event.detail.fonts[0].text
     })
   },
+  deleteOptions(e) {
+    const index = e.currentTarget.dataset.index
+    this.data.prizes.splice(index, 1)
+    this.setData({
+      prizes: this.data.prizes
+    })
+  },
   addOptions() {
     this.data.prizes.push({ fonts: [{ text: '选项' + (this.data.prizes.length + 1), top: '30' }], background: this.getRandomColor() })
     this.setData({
