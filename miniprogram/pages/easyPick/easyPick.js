@@ -18,8 +18,13 @@ Page({
       },
     ],
   },
-  inputOption(e){
-    console.log(e);
+  inputOption(e) {
+    const value = e.detail.value
+    const index = e.currentTarget.dataset.index
+    this.data.prizes[index].fonts[0].text = value
+    this.setData({
+      prizes: this.data.prizes
+    })
   },
   start() {
     // 获取抽奖组件实例
