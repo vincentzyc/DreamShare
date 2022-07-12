@@ -3,7 +3,7 @@
   <view class="input-wrapper">
     <view class="flex align-middle input-item" wx:for="{{prizes}}" wx:key="index">
       <input class="weui-input" value="{{item.fonts[0].text}}" maxlength="16" placeholder="最大输入长度为16" data-index="{{index}}" bindinput="inputOption" />
-      <image class="delete-icon" src="../../assets/svg/delete.svg" data-index="{{index}}" bindtap="deleteOptions"></image>
+      <image class="delete-icon" src="../../assets/svg/delete.svg" data-index="{{index}}" bindtap="deleteOptions" hidden="{{prizes.length<3}}"></image>
     </view>
     <view class="flex justify-end">
       <icon class="add-icon" type="cancel" size="23" bindtap="addOptions"></icon>
