@@ -9,9 +9,18 @@ Page({
     message: '',
     textareaSize: { minHeight: 150 }
   },
-  onChange(event) {
-    // event.detail 为当前输入的值
-    console.log(event.detail);
+  handleSave() {
+    const checkRes = this.verifyData()
+    if (checkRes === true) {
+      console.log('保存');
+    } else {
+      console.log('校验失败');
+    }
+  },
+  verifyData() {
+    if (this.data.title === '') return '请输入标题'
+    if (this.data.message === '') return '请输入内容'
+    return true
   },
 
   /**

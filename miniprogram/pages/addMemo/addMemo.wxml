@@ -5,5 +5,5 @@
   <view class="addmemo-content">
     <van-field input-class="addmemo-textarea" model:value="{{ message }}" type="textarea" placeholder="请输入内容" autosize="{{textareaSize}}" border="{{ false }}" />
   </view>
-  <van-button type="primary" block>保 存</van-button>
+  <van-button type="primary" block bindtap="handleSave">保 存</van-button>
 </view>
