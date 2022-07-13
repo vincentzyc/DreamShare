@@ -14,7 +14,10 @@ Page({
     if (checkRes === true) {
       console.log('保存');
     } else {
-      console.log('校验失败');
+      wx.showToast({
+        title: checkRes,
+        icon: 'error'
+      })
     }
   },
   verifyData() {
