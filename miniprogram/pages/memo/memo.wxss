@@ -3,25 +3,34 @@
   margin: 20rpx;
 }
 
-.add-icon {
-  margin-top: 60rpx;
-  transform: rotateZ(45deg)
+.add-memo {
+  position: fixed;
+  bottom: 20rpx;
+  right: 20rpx;
 }
-.memo-item{
+
+.add-icon {
+  transform: rotateZ(45deg);
+}
+
+.memo-item {
   margin: 20rpx;
   padding: 20rpx;
   box-shadow: 10rpx 10rpx 20rpx 10rpx #ccc;
 }
-.memo-item-title{
+
+.memo-item-title {
   font-weight: bold;
   font-size: 32rpx;
 }
-.memo-item-text{
+
+.memo-item-text {
   margin-top: 10rpx;
   font-size: 28rpx;
   color: #777;
 }
-.memo-item-time{
+
+.memo-item-time {
   margin-top: 10rpx;
   font-size: 24rpx;
   color: #bbb;
