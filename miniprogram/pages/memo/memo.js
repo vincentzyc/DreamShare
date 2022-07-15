@@ -1,14 +1,12 @@
+const app = getApp()
+
 Page({
   /**
    * 页面的初始数据
    */
   data: {
-    memos: [{
-      title: '备忘录标题备忘录标题备忘录标题备忘录标题备忘录标题',
-      text: '这是一个测试备忘录这是一个测试备忘录这是一个测试备忘录这是一个测试备忘录这是一个测试备忘录这是一个测试备忘录',
-      createTime: '2022-07-07: 07:07:07',
-      updateTime: '2022-07-07: 20:20:20',
-    }],
+    openid: '',
+    memos: [],
   },
   addMemos() {
     wx.navigateTo({
@@ -19,14 +17,71 @@ Page({
     //   memos: this.data.memos
     // })
   },
-  // getRandomColor() {
-  //   return '#' + ('00000' + (Math.random() * 0x1000000 << 0).toString(16)).slice(-6);
-  // },
+  getMemoList() {
+    wx.cloud.callFunction({
+      name: 'memo',
+      data: {},
+      success: res => {
+        console.log(res);
+        this.setData({
+          memos: res.result.data,
+        })
+      },
+      fail: err => {
+        wx.showToast({
+          icon: 'none',
+          title: '获取失败，请稍后重试',
+        })
+        console.log('[云函数] [login] 获取 openid 失败，请检查是否有部署云函数，错误信息：', err)
+      },
+      complete: () => {
+        // wx.hideLoading()
+      }
+    })
+  },
+  onLogin: function () {
+    // wx.showLoading({
+    //   title: '登录中',
+    // })
+    if (app.globalData.openid) {
+      this.setData({
+        openid: app.globalData.openid,
+      })
+      return this.getMemoList()
+    }
+    wx.cloud.callFunction({
+      name: 'login',
+      data: {},
+      success: res => {
+        app.globalData.openid = res.result.openid
+        this.setData({
+          openid: res.result.openid,
+        })
+        this.getMemoList()
+      },
+      fail: err => {
+        wx.showToast({
+          icon: 'none',
+          title: '获取 openid 失败，请检查是否有部署 login 云函数',
+        })
+        console.log('[云函数] [login] 获取 openid 失败，请检查是否有部署云函数，错误信息：', err)
+      },
+      complete: () => {
+        // wx.hideLoading()
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad(options) {
-
+  onLoad() {
+    if (!wx.cloud) {
+      wx.redirectTo({
+        url: '../chooseLib/chooseLib',
+      })
+      return
+    }
+    this.onLogin()
   },
 
   /**
