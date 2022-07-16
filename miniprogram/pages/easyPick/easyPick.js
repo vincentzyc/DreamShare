@@ -31,6 +31,8 @@ Page({
     const child = this.selectComponent('#myLucky')
     // 调用play方法开始旋转
     child.lucky.play()
+    //缓存历史转盘
+    this.saveInHistory(this.data.prizes)
     // 用定时器模拟请求接口
     setTimeout(() => {
       // 3s 后得到中奖索引
@@ -47,6 +49,20 @@ Page({
       showCancel: false,
       content: event.detail.fonts[0].text
     })
+  },
+  saveInHistory(options) {
+    wx.getStorage({
+      key: 'easyPickOptions',
+      success(res) {
+        console.log(res.data)
+        const newOptions = res.data.unshift(options)
+        wx.setStorage({
+          key: "key",
+          data: newOptions
+        })
+      }
+    })
+
   },
   deleteOptions(e) {
     const index = e.currentTarget.dataset.index
