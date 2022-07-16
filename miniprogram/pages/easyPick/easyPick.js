@@ -3,6 +3,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    palying: false,
     blocks: [{ padding: '13px', background: '#617df2' }],
     prizes: [
       { fonts: [{ text: '选项1', top: '30' }], background: '#e9e8fe' },
@@ -27,8 +28,12 @@ Page({
     })
   },
   start() {
+    if (this.data.palying) return
     // 获取抽奖组件实例
     const child = this.selectComponent('#myLucky')
+    this.setData({
+      palying: true
+    })
     // 调用play方法开始旋转
     child.lucky.play()
     //缓存历史转盘
@@ -39,6 +44,9 @@ Page({
       const index = parseInt(Math.random() * this.data.prizes.length)
       // 调用stop方法然后缓慢停止
       child.lucky.stop(index)
+      this.setData({
+        palying: false
+      })
     }, 3000)
   },
   end(event) {
@@ -51,18 +59,23 @@ Page({
     })
   },
   saveInHistory(options) {
-    wx.getStorage({
-      key: 'easyPickOptions',
-      success(res) {
-        console.log(res.data)
-        const newOptions = res.data.unshift(options)
+    try {
+      var value = wx.getStorageSync('easyPickOptions')
+      if (Array.isArray(value)) {
+        value.unshift(options)
         wx.setStorage({
-          key: "key",
-          data: newOptions
+          key: "easyPickOptions",
+          data: value
+        })
+      } else {
+        wx.setStorage({
+          key: "easyPickOptions",
+          data: [options]
         })
       }
-    })
-
+    } catch (e) {
+      console.log(e);
+    }
   },
   deleteOptions(e) {
     const index = e.currentTarget.dataset.index
