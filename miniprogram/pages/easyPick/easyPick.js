@@ -58,6 +58,16 @@ Page({
       content: event.detail.fonts[0].text
     })
   },
+  unique(arr) {
+    let newArr = []
+    try {
+      const narr = arr.map(l1 => JSON.stringify(l1.map(v => ({ fonts: v.fonts }))))
+      newArr = [...new Set(narr)].map(v => JSON.parse(v))
+    } catch (error) {
+      console.log(error);
+    }
+    return newArr
+  },
   saveInHistory(options) {
     try {
       var value = wx.getStorageSync('easyPickOptions')
@@ -65,12 +75,12 @@ Page({
         value.unshift(options)
         wx.setStorage({
           key: "easyPickOptions",
-          data: value
+          data: this.unique(value)
         })
       } else {
         wx.setStorage({
           key: "easyPickOptions",
-          data: [options]
+          data: this.unique([options])
         })
       }
     } catch (e) {
