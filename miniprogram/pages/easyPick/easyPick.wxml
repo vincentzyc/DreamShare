@@ -10,4 +10,13 @@
     </view>
   </view>
   <lucky-wheel id="myLucky" width="600rpx" height="600rpx" blocks="{{blocks}}" prizes="{{prizes}}" buttons="{{buttons}}" bindstart="start" bindend="end" />
+  <view class="history-wrap">
+    <view class="history-title">我的历史</view>
+    <view class="history-list">
+      <view class="history-item">111</view>
+      <view>111</view>
+      <view>111</view>
+      <view>111</view>
+    </view>
+  </view>
 </view>
