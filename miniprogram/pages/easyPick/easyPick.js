@@ -4,6 +4,7 @@ Page({
    */
   data: {
     palying: false,
+    localOption: [],
     blocks: [{ padding: '13px', background: '#617df2' }],
     prizes: [
       { fonts: [{ text: '选项1', top: '30' }], background: '#e9e8fe' },
@@ -70,18 +71,22 @@ Page({
   },
   saveInHistory(options) {
     try {
-      var value = wx.getStorageSync('easyPickOptions')
+      const value = wx.getStorageSync('easyPickOptions')
       if (Array.isArray(value)) {
         value.unshift(options)
+        const uniOption = this.unique(value)
         wx.setStorage({
           key: "easyPickOptions",
-          data: this.unique(value)
+          data: uniOption
         })
+        this.formatLocalOption(uniOption)
       } else {
+        const uniOption = this.unique([options])
         wx.setStorage({
           key: "easyPickOptions",
-          data: this.unique([options])
+          data: uniOption
         })
+        this.formatLocalOption(uniOption)
       }
     } catch (e) {
       console.log(e);
@@ -103,11 +108,23 @@ Page({
   getRandomColor() {
     return '#' + ('00000' + (Math.random() * 0x1000000 << 0).toString(16)).substr(-6);
   },
+  formatLocalOption(arr) {
+    const textList = []
+    arr.forEach(l1 => {
+      let temText = []
+      l1.forEach(l2 => temText.push(l2.fonts[0].text))
+      textList.push(temText)
+    });
+    this.setData({
+      localOption: textList
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-
+    const value = wx.getStorageSync('easyPickOptions')
+    if (Array.isArray(value) && value.length > 0) this.formatLocalOption(value)
   },
 
   /**
