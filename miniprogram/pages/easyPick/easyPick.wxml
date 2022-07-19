@@ -13,10 +13,9 @@
   <view class="history-wrap">
     <view class="history-title">我的历史</view>
     <view class="history-list">
-      <view class="history-item">111</view>
-      <view>111</view>
-      <view>222</view>
-      <view>333</view>
+      <view class="history-item" wx:for="{{localOption}}" wx:key="index">
+        <view wx:for="{{item}}" wx:for-item="text" wx:key="text">{{text}}</view>
+      </view>
     </view>
   </view>
 </view>
