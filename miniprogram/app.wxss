@@ -224,7 +224,7 @@
 	white-space: nowrap;
 	text-overflow: ellipsis;
 }
-.txtover-1 {
+.txtover1 {
 	overflow: hidden;
 	text-overflow: ellipsis;
 	display: -webkit-box;
@@ -233,7 +233,7 @@
 	word-break: break-all;
 }
 
-.txtover-2 {
+.txtover2 {
 	overflow: hidden;
 	text-overflow: ellipsis;
 	display: -webkit-box;
@@ -241,7 +241,7 @@
 	-webkit-box-orient: vertical;
 }
 
-.txtover-3 {
+.txtover3 {
 	overflow: hidden;
 	text-overflow: ellipsis;
 	display: -webkit-box;
