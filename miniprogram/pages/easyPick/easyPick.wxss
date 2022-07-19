@@ -56,3 +56,6 @@
   padding: 10rpx;
   box-shadow: 0rpx 0rpx 10rpx 10rpx #eee;
 }
+.handle-btn{
+  margin-left: 16rpx;
+}
