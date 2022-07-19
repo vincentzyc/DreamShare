@@ -14,7 +14,7 @@
     <view class="history-title">我的历史</view>
     <view class="history-list">
       <view class="history-item" wx:for="{{localOption}}" wx:key="index">
-        <view wx:for="{{item}}" wx:for-item="text" wx:key="text">{{text}}</view>
+        <view class="txtover" wx:for="{{item}}" wx:for-item="text" wx:key="text">{{text}}</view>
       </view>
     </view>
   </view>
