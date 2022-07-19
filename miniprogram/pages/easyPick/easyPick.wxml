@@ -13,9 +13,16 @@
   <view class="history-wrap">
     <view class="history-title">我的历史</view>
     <view class="history-list">
-      <view class="history-item" wx:for="{{localOption}}" wx:key="index">
-        <view class="txtover" wx:for="{{item}}" wx:for-item="text" wx:key="text">{{text}}</view>
+      <view class="flex history-item" wx:for="{{localOption}}" wx:key="index">
+        <view class="flex-auto history-text">
+          <view class="txtover1" wx:for="{{item}}" wx:for-item="text" wx:key="text">{{text}}</view>
+        </view>
+        <view class="flex flex-column space-around flex-none history-handle">
+          <view>使用</view>
+          <view>删除</view>
+        </view>
       </view>
+
     </view>
   </view>
 </view>
