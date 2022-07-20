@@ -5,6 +5,7 @@ Page({
   data: {
     palying: false,
     localOption: [],
+    localPrizes: [],
     blocks: [{ padding: '13px', background: '#617df2' }],
     prizes: [
       { fonts: [{ text: '选项1', top: '30' }], background: '#e9e8fe' },
@@ -116,8 +117,33 @@ Page({
       textList.push(temText)
     });
     this.setData({
-      localOption: textList
+      localOption: textList,
+      localPrizes: arr
     })
+  },
+  useOption(e) {
+    wx.showModal({
+      title: '提示',
+      content: '确定使用此选项替换现有选项？',
+      success: res => {
+        if (res.confirm) {
+          const i = e.currentTarget.dataset.index
+          const option = this.data.localPrizes[i]
+          if (Array.isArray(option)) {
+            const newOption = option.map(v => ({ ...v, background: this.getRandomColor() }))
+            this.setData({
+              prizes: newOption
+            })
+          }
+        } else if (res.cancel) {
+          console.log('用户点击取消')
+        }
+      }
+    })
+
+  },
+  deleteOption() {
+
   },
   /**
    * 生命周期函数--监听页面加载
