@@ -18,8 +18,12 @@
           <view class="txtover1" wx:for="{{item}}" wx:for-item="text" wx:key="text">{{text}}</view>
         </view>
         <view class="flex flex-column space-around flex-none history-handle">
-          <view class="handle-btn"><van-icon name="certificate" size="24px"/></view>
-          <view class="handle-btn"><van-icon name="delete-o" size="24px"/></view>
+          <view class="handle-btn" bindtap="useOption" data-index="{{index}}">
+            <van-icon name="certificate" size="24px" />
+          </view>
+          <view class="handle-btn" bindtap="deleteOption" data-index="{{index}}">
+            <van-icon name="delete-o" size="24px" />
+          </view>
         </view>
       </view>
     </view>
