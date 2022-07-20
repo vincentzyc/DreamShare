@@ -142,8 +142,9 @@ Page({
     })
 
   },
-  deleteOption() {
-
+  deleteOption(e) {
+    const i = e.currentTarget.dataset.index
+    console.log(i);
   },
   /**
    * 生命周期函数--监听页面加载
