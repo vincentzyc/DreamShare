@@ -1,11 +1,5 @@
 {
   "usingComponents": {
-    "ds-map": "../map/map",
-    "CityPicker": "/components/CityPicker/CityPicker",
-    "van-button": "@vant/weapp/button/index",
-    "van-cell": "@vant/weapp/cell/index",
-    "van-cell-group": "@vant/weapp/cell-group/index",
-    "van-calendar": "@vant/weapp/calendar/index",
-    "van-tree-select": "@vant/weapp/tree-select/index"
+
   }
 }
