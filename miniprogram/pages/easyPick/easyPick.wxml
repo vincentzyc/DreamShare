@@ -10,7 +10,7 @@
     </view>
   </view>
   <lucky-wheel id="myLucky" width="600rpx" height="600rpx" blocks="{{blocks}}" prizes="{{prizes}}" buttons="{{buttons}}" bindstart="start" bindend="end" />
-  <view class="history-wrap">
+  <view class="history-wrap" wx:if="{{localOption.length>0}}">
     <view class="history-title">我的历史</view>
     <view class="history-list">
       <view class="flex history-item" wx:for="{{localOption}}" wx:key="index">

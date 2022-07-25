@@ -21,6 +21,16 @@ Page({
       },
     ],
   },
+  onShareTimeline() {
+    return {
+      title: '帮你选'
+    }
+  },
+  onShareAppMessage() {
+    return {
+      title: '帮你选'
+    }
+  },
   inputOption(e) {
     const value = e.detail.value
     const index = e.currentTarget.dataset.index
@@ -143,8 +153,29 @@ Page({
 
   },
   deleteOption(e) {
-    const i = e.currentTarget.dataset.index
-    console.log(i);
+    wx.showModal({
+      title: '提示',
+      content: '确定删除此项历史记录？',
+      success: res => {
+        if (res.confirm) {
+          const i = e.currentTarget.dataset.index
+          this.data.localOption.splice(i, 1)
+          this.data.localPrizes.splice(i, 1)
+          this.setData({
+            localOption: this.data.localOption,
+            localPrizes: this.data.localPrizes
+          })
+          const uniOption = this.unique(this.data.localPrizes)
+          wx.setStorage({
+            key: "easyPickOptions",
+            data: uniOption
+          })
+        } else if (res.cancel) {
+          console.log('用户点击取消')
+        }
+      }
+    })
+
   },
   /**
    * 生命周期函数--监听页面加载
