@@ -86,6 +86,7 @@ Page({
       if (Array.isArray(value)) {
         value.unshift(options)
         const uniOption = this.unique(value)
+        if (uniOption.length > 10) uniOption.pop()
         wx.setStorage({
           key: "easyPickOptions",
           data: uniOption
@@ -175,7 +176,6 @@ Page({
         }
       }
     })
-
   },
   /**
    * 生命周期函数--监听页面加载
