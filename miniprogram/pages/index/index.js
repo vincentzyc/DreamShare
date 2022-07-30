@@ -5,6 +5,13 @@ Page({
   data: {
     mainActiveIndex: 0,
     activeId: null,
+    childPages: [{
+      name: "帮你选",
+      page: "../easyPick/easyPick"
+    }, {
+      name: "我的记事",
+      page: "../addMemo/addMemo"
+    }],
     avatarUrl: './user-unlogin.png',
     userInfo: {},
     openid: '',
@@ -72,14 +79,10 @@ Page({
     date = new Date(date);
     return `${date.getMonth() + 1}/${date.getDate()}`;
   },
-  bindEasyPick() {
+  handerGoPage(e) {
+    const page = e.currentTarget.dataset.page
     wx.navigateTo({
-      url: '../easyPick/easyPick',
-    })
-  },
-  bindAddMemo() {
-    wx.navigateTo({
-      url: '../addMemo/addMemo',
+      url: page
     })
   },
   getUserProfile() {

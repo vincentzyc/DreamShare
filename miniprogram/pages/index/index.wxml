@@ -1,8 +1,9 @@
 <view class="container">
   <view class="widthfull">
     <view class="card-list">
-      <view class="card-item" bindtap="bindEasyPick">帮你选</view>
-      <view class="card-item" bindtap="bindAddMemo">我的记事</view>
+      <view class="card-item" wx:for="{{childPages}}" wx:key="page">
+        <view data-page="{{item.page}}" bindtap="handerGoPage">{{item.name}}</view>
+      </view>
     </view>
   </view>
 </view>
