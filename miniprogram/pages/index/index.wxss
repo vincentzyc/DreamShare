@@ -1,151 +1,152 @@
 /**index.wxss**/
 
 page {
-	background: #f6f6f6;
-	display: flex;
-	flex-direction: column;
-	justify-content: flex-start;
+  background: #f6f6f6;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 .dream-share {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	width: 100%;
-	background: #fff;
-	border: 1px solid rgba(0, 0, 0, 0.1);
-	border-left: none;
-	border-right: none;
-	margin-top: 40rpx;
-	font-size: 32rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-left: none;
+  border-right: none;
+  margin-top: 40rpx;
+  font-size: 32rpx;
 }
 
 .ds-title {
-	margin-left: 20rpx;
+  margin-left: 20rpx;
 }
 
 .logo {
-	width: 120rpx;
-	height: 120rpx;
+  width: 120rpx;
+  height: 120rpx;
 }
 
 .userinfo,
 .uploader {
-	margin-top: 40rpx;
-	height: 140rpx;
-	width: 100%;
-	background: #fff;
-	border: 1px solid rgba(0, 0, 0, 0.1);
-	border-left: none;
-	border-right: none;
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	transition: all 300ms ease;
+  margin-top: 40rpx;
+  height: 140rpx;
+  width: 100%;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-left: none;
+  border-right: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  transition: all 300ms ease;
 }
 
 .userinfo-login {
-	margin-right: 40rpx;
+  margin-right: 40rpx;
 }
 
 .userinfo-avatar {
-	width: 100rpx;
-	height: 100rpx;
-	margin: 20rpx;
-	border-radius: 50%;
-	background-size: cover;
-	background-color: white;
+  width: 100rpx;
+  height: 100rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+  background-size: cover;
+  background-color: white;
 }
 
 .userinfo-block-avatar {
-	width: 100rpx;
-	height: 100rpx;
-	margin: 40rpx;
-	border-radius: 50%;
-	overflow: hidden;
+  width: 100rpx;
+  height: 100rpx;
+  margin: 40rpx;
+  border-radius: 50%;
+  overflow: hidden;
 }
 
 .userinfo-avatar[size] {
-	width: 100rpx;
+  width: 100rpx;
 }
 
 
 .userinfo-avatar:after {
-	border: none;
+  border: none;
 }
 
 .userinfo-nickname {
-	font-size: 32rpx;
-	color: #007aff;
-	background-color: white;
-	background-size: cover;
-	text-align: left;
-	padding-left: 0;
-	margin-left: 10px;
+  font-size: 32rpx;
+  color: #007aff;
+  background-color: white;
+  background-size: cover;
+  text-align: left;
+  padding-left: 0;
+  margin-left: 10px;
 }
 
 .userinfo-nickname::after {
-	border: none;
+  border: none;
 }
 
 .userinfo-nickname-wrapper {
-	flex: 1;
+  flex: 1;
 }
 
 .uploader {
-	height: auto;
-	padding: 0 0 0 40rpx;
-	flex-direction: column;
-	align-items: flex-start;
-	box-sizing: border-box;
+  height: auto;
+  padding: 0 0 0 40rpx;
+  flex-direction: column;
+  align-items: flex-start;
+  box-sizing: border-box;
 }
 
 .uploader-text {
-	width: 100%;
-	line-height: 52px;
-	font-size: 34rpx;
-	color: #007aff;
+  width: 100%;
+  line-height: 52px;
+  font-size: 34rpx;
+  color: #007aff;
 }
 
 .uploader-container {
-	width: 100%;
-	height: 400rpx;
-	padding: 20rpx 20rpx 20rpx 0;
-	display: flex;
-	align-content: center;
-	justify-content: center;
-	box-sizing: border-box;
-	border-top: 1px solid rgba(0, 0, 0, 0.1);
+  width: 100%;
+  height: 400rpx;
+  padding: 20rpx 20rpx 20rpx 0;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  box-sizing: border-box;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .uploader-image {
-	width: 100%;
-	height: 360rpx;
+  width: 100%;
+  height: 360rpx;
 }
 
 .tunnel {
-	padding: 40rpx;
+  padding: 40rpx;
 }
 
 .full-image {
-	width: 100%;
-	padding: 0;
-	margin: 0;
-	display: flex;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  display: flex;
 }
 
 .card-list {
-	width: 80%;
-	padding: 10px;
-	margin: 0 auto;
+  width: 80%;
+  padding: 10px;
+  margin: 0 auto;
 }
 
 .card-item {
-	display: block;
-	padding: 60px 0;
-	font-size: 26px;
-	color: #4370b0;
-	text-align: center;
-	border: 1px solid #eee;
-	box-shadow: 0px 2px 12px #ccc;
+  display: block;
+  padding: 60px 0;
+  font-size: 26px;
+  color: #4370b0;
+  text-align: center;
+  border: 1px solid #eee;
+  box-shadow: 0px 2px 12px #ccc;
+  margin-bottom: 30rpx;
 }
