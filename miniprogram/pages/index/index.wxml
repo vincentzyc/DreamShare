@@ -2,6 +2,7 @@
   <view class="widthfull">
     <view class="card-list">
       <view class="card-item" bindtap="bindEasyPick">帮你选</view>
+      <view class="card-item" bindtap="bindAddMemo">我的记事</view>
     </view>
   </view>
 </view>
