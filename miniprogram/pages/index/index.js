@@ -5,41 +5,11 @@ Page({
   data: {
     mainActiveIndex: 0,
     activeId: null,
-    items: [
-      {
-        text: '所有城市', // 导航名称
-        children: [
-          {
-            text: '温州',
-            id: 1
-          },
-          {
-            text: '杭州',
-            id: 2,
-          },
-        ],
-      },
-      {
-        text: '所有城市1', // 导航名称
-        children: [
-          {
-            text: '温州1',
-            id: 11
-          },
-          {
-            text: '杭州1',
-            id: 22,
-          },
-        ],
-      },
-    ],
     avatarUrl: './user-unlogin.png',
     userInfo: {},
     openid: '',
     userType: 1,
-    hasUserInfo: false,
-    // canIUseOpenData:false
-    canIUseOpenData: wx.canIUse('open-data.type.userAvatarUrl') // 如需尝试获取用户信息可改为false
+    hasUserInfo: false// 如需尝试获取用户信息可改为false
   },
   onShareTimeline() {
     return {
@@ -105,6 +75,11 @@ Page({
   bindEasyPick() {
     wx.navigateTo({
       url: '../easyPick/easyPick',
+    })
+  },
+  bindAddMemo() {
+    wx.navigateTo({
+      url: '../addMemo/addMemo',
     })
   },
   getUserProfile() {
