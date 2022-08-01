@@ -71,10 +71,14 @@ Page({
       }
     })
   },
+  getLocalMemo(){
+    console.log('get local memo');
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad() {
+    this.getLocalMemo()
     // if (!wx.cloud) {
     //   wx.redirectTo({
     //     url: '../chooseLib/chooseLib',
