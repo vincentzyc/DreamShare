@@ -10,7 +10,7 @@ Page({
       page: "../easyPick/easyPick"
     }, {
       name: "我的记事",
-      page: "../addMemo/addMemo"
+      page: "../memo/memo"
     }],
     avatarUrl: './user-unlogin.png',
     userInfo: {},
