@@ -9,10 +9,10 @@ Page({
     message: '',
     textareaSize: { minHeight: 150 }
   },
-  handleSave() {
+  handleClickSave() {
     const checkRes = this.verifyData()
     if (checkRes === true) {
-      console.log('保存');
+      this.localSave()
     } else {
       wx.showToast({
         title: checkRes,
@@ -24,6 +24,9 @@ Page({
     if (this.data.title === '') return '请输入标题'
     if (this.data.message === '') return '请输入内容'
     return true
+  },
+  localSave(){
+    console.log('保存');
   },
 
   /**
