@@ -9,6 +9,9 @@
       </view>
     </view>
   </view>
+  <view wx:else class="mg-t10 lh24 c999 text-center">
+    快去新增你的专属记忆吧
+  </view>
   <view class="add-memo text-center">
     <icon class="add-icon" type="cancel" size="64" bindtap="addMemos"></icon>
   </view>
