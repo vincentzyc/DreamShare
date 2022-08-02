@@ -82,20 +82,20 @@ Page({
   },
   saveInHistory(options) {
     try {
-      const value = wx.getStorageSync('easyPickOptions')
+      const value = wx.getStorageSync(app.localKeys.easyPickOptions)
       if (Array.isArray(value)) {
         value.unshift(options)
         const uniOption = this.unique(value)
         if (uniOption.length > 10) uniOption.pop()
         wx.setStorage({
-          key: "easyPickOptions",
+          key: app.localKeys.easyPickOptions,
           data: uniOption
         })
         this.formatLocalOption(uniOption)
       } else {
         const uniOption = this.unique([options])
         wx.setStorage({
-          key: "easyPickOptions",
+          key: app.localKeys.easyPickOptions,
           data: uniOption
         })
         this.formatLocalOption(uniOption)
@@ -168,7 +168,7 @@ Page({
           })
           const uniOption = this.unique(this.data.localPrizes)
           wx.setStorage({
-            key: "easyPickOptions",
+            key: app.localKeys.easyPickOptions,
             data: uniOption
           })
         } else if (res.cancel) {
@@ -181,7 +181,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-    const value = wx.getStorageSync('easyPickOptions')
+    const value = wx.getStorageSync(app.localKeys.easyPickOptions)
     if (Array.isArray(value) && value.length > 0) this.formatLocalOption(value)
   },
 
