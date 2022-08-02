@@ -71,8 +71,13 @@ Page({
       }
     })
   },
-  getLocalMemo(){
-    console.log('get local memo');
+  getLocalMemo() {
+    const value = wx.getStorageSync('memoList')
+    if (Array.isArray(value)) {
+      this.setData({
+        memos: value
+      })
+    }
   },
   /**
    * 生命周期函数--监听页面加载
