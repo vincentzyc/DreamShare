@@ -1,4 +1,5 @@
 //app.js
+import localKeys from './assets/js/localkeys'
 App({
   onLaunch: function () {
     // if (!wx.cloud) {
@@ -13,7 +14,9 @@ App({
     //     traceUser: true,
     //   })
     // }
-    this.globalData = {}
+    this.globalData = {
+      localKeys: localKeys
+    }
     wx.showShareMenu({
       withShareTicket: true,
       menus: ['shareAppMessage', 'shareTimeline']
