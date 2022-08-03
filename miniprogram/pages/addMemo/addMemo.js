@@ -26,12 +26,12 @@ Page({
     if (this.data.message === '') return '请输入内容'
     return true
   },
-  localSave(){
+  localSave() {
     const param = {
-      title:'',
-      content:'',
-      createTime:formatDate(),
-      updateTime:formatDate()
+      title: '',
+      content: '',
+      createTime: formatDate(),
+      updateTime: formatDate()
     }
     try {
       const value = wx.getStorageSync(app.localKeys.memoList)
@@ -47,6 +47,13 @@ Page({
           data: [param]
         })
       }
+      wx.showToast({
+        title: '保存成功',
+        icon: 'success'
+      })
+      wx.navigateTo({
+        url: '../memo/memo',
+      })
     } catch (e) {
       console.log(e);
     }
