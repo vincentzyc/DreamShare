@@ -1,6 +1,8 @@
 //app.js
 import localKeys from './assets/js/localkeys'
 App({
+  globalData: {},
+  localKeys: localKeys,
   onLaunch: function () {
     // if (!wx.cloud) {
     //   console.error('请使用 2.2.3 或以上的基础库以使用云能力')
@@ -14,9 +16,6 @@ App({
     //     traceUser: true,
     //   })
     // }
-    this.globalData = {
-      localKeys: localKeys
-    }
     wx.showShareMenu({
       withShareTicket: true,
       menus: ['shareAppMessage', 'shareTimeline']
