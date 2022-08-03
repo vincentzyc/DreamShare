@@ -1,5 +1,8 @@
 // pages/addMemo.js
 import { formatDate } from "../../utils/index";
+
+const app = getApp()
+
 Page({
 
   /**
@@ -28,8 +31,8 @@ Page({
   },
   localSave() {
     const param = {
-      title: '',
-      content: '',
+      title: this.data.title,
+      content: this.data.message,
       createTime: formatDate(),
       updateTime: formatDate()
     }
