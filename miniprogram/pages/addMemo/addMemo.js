@@ -1,4 +1,5 @@
 // pages/addMemo.js
+import { formatDate } from "../../utils";
 Page({
 
   /**
@@ -26,7 +27,29 @@ Page({
     return true
   },
   localSave(){
-    console.log('保存');
+    const param = {
+      title:'',
+      content:'',
+      createTime:formatDate(),
+      updateTime:formatDate()
+    }
+    try {
+      const value = wx.getStorageSync(app.localKeys.memoList)
+      if (Array.isArray(value)) {
+        value.unshift(param)
+        wx.setStorage({
+          key: app.localKeys.memoList,
+          data: value
+        })
+      } else {
+        wx.setStorage({
+          key: app.localKeys.memoList,
+          data: [param]
+        })
+      }
+    } catch (e) {
+      console.log(e);
+    }
   },
 
   /**
