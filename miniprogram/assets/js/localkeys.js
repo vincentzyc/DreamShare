@@ -1,4 +1,4 @@
-export const localKeys = {
+export default {
   easyPickOptions: 'easyPickOptions',
   memoList: 'memoList'
 }
