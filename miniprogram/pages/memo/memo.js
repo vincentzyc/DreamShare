@@ -72,6 +72,7 @@ Page({
     })
   },
   getLocalMemo() {
+    console.log(app);
     const value = wx.getStorageSync(app.localKeys.memoList)
     if (Array.isArray(value)) {
       this.setData({
