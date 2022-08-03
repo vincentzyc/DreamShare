@@ -1,5 +1,5 @@
 // pages/addMemo.js
-import { formatDate } from "../../utils";
+import { formatDate } from "../../utils/index";
 Page({
 
   /**
