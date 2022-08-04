@@ -8,6 +8,30 @@ Page({
     openid: '',
     memos: [],
   },
+  handLongpress(e) {
+    wx.showModal({
+      title: '提示',
+      content: '确定删除此记事？',
+      success: res => {
+        if (res.confirm) {
+          const i = e.currentTarget.dataset.index
+          const memo = this.data.memos[i]
+          if (memo) {
+            this.data.memos.splice(i, 1)
+            this.setData({
+              memos: this.data.memos
+            })
+            wx.setStorage({
+              key: app.localKeys.memoList,
+              data: this.data.memos
+            })
+          }
+        } else if (res.cancel) {
+          console.log('用户点击取消')
+        }
+      }
+    })
+  },
   addMemos() {
     wx.navigateTo({
       url: '../addMemo/addMemo',
