@@ -151,7 +151,6 @@ Page({
         }
       }
     })
-
   },
   deleteOption(e) {
     wx.showModal({
