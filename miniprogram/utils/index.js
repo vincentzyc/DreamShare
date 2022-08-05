@@ -3,7 +3,7 @@
  * @param {格式化时间格式,yyyy-mm-dd HH:MM:SS} fmt 
  * @param {需要格式化的时间对象,默认new Date()} date 
  */
- export function formatDate(fmt, date) {
+export function formatDate(fmt, date) {
   fmt = fmt || 'yyyy-mm-dd HH:MM:SS'
   date = date || new Date()
   let ret;
