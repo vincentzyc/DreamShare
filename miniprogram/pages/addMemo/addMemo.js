@@ -9,6 +9,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    curId: '',
     title: '',
     message: '',
     textareaSize: { minHeight: 150 }
@@ -31,6 +32,7 @@ Page({
   },
   localSave() {
     const param = {
+      id: Date.now(),
       title: this.data.title,
       content: this.data.message,
       createTime: formatDate(),
@@ -66,7 +68,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-
+    this.setData({
+      curId: options.id || ""
+    })
   },
 
   /**
