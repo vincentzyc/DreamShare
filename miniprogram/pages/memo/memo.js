@@ -36,10 +36,13 @@ Page({
     wx.navigateTo({
       url: '../addMemo/addMemo',
     })
-    // this.data.memos.push({ text: '选项' + (this.data.memos.length + 1), background: this.getRandomColor() })
-    // this.setData({
-    //   memos: this.data.memos
-    // })
+  },
+  editMemos(e) {
+    const i = e.currentTarget.dataset.index
+    const memo = this.data.memos[i]
+    wx.navigateTo({
+      url: '../addMemo/addMemo?id=' + memo.id,
+    })
   },
   getMemoList() {
     wx.cloud.callFunction({
