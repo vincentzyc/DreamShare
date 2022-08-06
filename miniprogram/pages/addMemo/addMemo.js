@@ -63,7 +63,14 @@ Page({
       console.log(e);
     }
   },
-
+getCurMemo(){
+  const value = wx.getStorageSync(app.localKeys.memoList)
+  console.log(value);
+  if(Array.isArray(value)&&value.length>0){
+    // const curMemo = xxx
+    // TODO
+  }
+},
   /**
    * 生命周期函数--监听页面加载
    */
@@ -71,6 +78,7 @@ Page({
     this.setData({
       curId: options.id || ""
     })
+    this.getCurMemo()
   },
 
   /**
