@@ -11,13 +11,13 @@ Page({
   data: {
     curId: '',
     title: '',
-    message: '',
+    content: '',
     textareaSize: { minHeight: 150 }
   },
   handleClickSave() {
     const checkRes = this.verifyData()
     if (checkRes === true) {
-      this.localSave()
+      this.addLocalSave()
     } else {
       wx.showToast({
         title: checkRes,
@@ -27,14 +27,14 @@ Page({
   },
   verifyData() {
     if (this.data.title === '') return '请输入标题'
-    if (this.data.message === '') return '请输入内容'
+    if (this.data.content === '') return '请输入内容'
     return true
   },
-  localSave() {
+  addLocalSave() {
     const param = {
       id: Date.now(),
       title: this.data.title,
-      content: this.data.message,
+      content: this.data.content,
       createTime: formatDate(),
       updateTime: formatDate()
     }
@@ -67,8 +67,15 @@ getCurMemo(){
   const value = wx.getStorageSync(app.localKeys.memoList)
   console.log(value);
   if(Array.isArray(value)&&value.length>0){
-    // const curMemo = xxx
-    // TODO
+    const curMemo = value.find(v=>v.id==this.data.curId)
+    console.log(curMemo);
+    if(curMemo) {
+      this.setData({
+        curId: curMemo.curId,
+        title: curMemo.title,
+        content: curMemo.content,
+      })
+    }
   }
 },
   /**
