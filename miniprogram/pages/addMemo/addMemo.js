@@ -38,10 +38,13 @@ Page({
       createTime: formatDate(),
       updateTime: formatDate()
     }
+    this.localSave(param)
+  },
+  localSave(data) {
     try {
       const value = wx.getStorageSync(app.localKeys.memoList)
       if (Array.isArray(value)) {
-        value.unshift(param)
+        value.unshift(data)
         wx.setStorage({
           key: app.localKeys.memoList,
           data: value
@@ -49,7 +52,7 @@ Page({
       } else {
         wx.setStorage({
           key: app.localKeys.memoList,
-          data: [param]
+          data: [data]
         })
       }
       wx.showToast({
@@ -63,21 +66,21 @@ Page({
       console.log(e);
     }
   },
-getCurMemo(){
-  const value = wx.getStorageSync(app.localKeys.memoList)
-  console.log(value);
-  if(Array.isArray(value)&&value.length>0){
-    const curMemo = value.find(v=>v.id==this.data.curId)
-    console.log(curMemo);
-    if(curMemo) {
-      this.setData({
-        curId: curMemo.curId,
-        title: curMemo.title,
-        content: curMemo.content,
-      })
+  getCurMemo() {
+    const value = wx.getStorageSync(app.localKeys.memoList)
+    console.log(value);
+    if (Array.isArray(value) && value.length > 0) {
+      const curMemo = value.find(v => v.id == this.data.curId)
+      console.log(curMemo);
+      if (curMemo) {
+        this.setData({
+          curId: curMemo.curId,
+          title: curMemo.title,
+          content: curMemo.content,
+        })
+      }
     }
-  }
-},
+  },
   /**
    * 生命周期函数--监听页面加载
    */
