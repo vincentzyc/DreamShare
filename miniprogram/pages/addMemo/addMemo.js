@@ -9,6 +9,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    curMemo: null,
     curId: '',
     title: '',
     content: '',
@@ -17,7 +18,7 @@ Page({
   handleClickSave() {
     const checkRes = this.verifyData()
     if (checkRes === true) {
-      this.addLocalSave()
+      this.memoSave()
     } else {
       wx.showToast({
         title: checkRes,
@@ -30,21 +31,28 @@ Page({
     if (this.data.content === '') return '请输入内容'
     return true
   },
-  addLocalSave() {
+  memoSave() {
     const param = {
-      id: Date.now(),
       title: this.data.title,
       content: this.data.content,
-      createTime: formatDate(),
       updateTime: formatDate()
+    }
+    if (this.data.curId) {
+      param.id = this.data.curId;
+      param.createTime = this.data.curMemo.createTime;
+    } else {
+      param.id = Date.now().toString()
+      param.createTime = formatDate();
     }
     this.localSave(param)
   },
   localSave(data) {
     try {
       const value = wx.getStorageSync(app.localKeys.memoList)
-      if (Array.isArray(value)) {
-        value.unshift(data)
+      if (Array.isArray(value) && value.length > 0) {
+        const i = value.findIndex(v => v.id === this.data.curId)
+        console.log(i);
+        i > -1 ? value.splice(i, 1, data) : value.unshift(data)
         wx.setStorage({
           key: app.localKeys.memoList,
           data: value
@@ -68,13 +76,11 @@ Page({
   },
   getCurMemo() {
     const value = wx.getStorageSync(app.localKeys.memoList)
-    console.log(value);
     if (Array.isArray(value) && value.length > 0) {
-      const curMemo = value.find(v => v.id == this.data.curId)
-      console.log(curMemo);
+      const curMemo = value.find(v => v.id === this.data.curId)
       if (curMemo) {
         this.setData({
-          curId: curMemo.curId,
+          curMemo: curMemo,
           title: curMemo.title,
           content: curMemo.content,
         })
