@@ -1,11 +1,31 @@
 .addmemo-title {
+  position: fixed;
+  top: 0;
+  width: 100%;
   border-bottom: 1rpx solid #e7e7e7;
-  margin-bottom: 20rpx;
+  margin-bottom: 10px;
 }
 
 .addmemo-wrapper {
+  position: relative;
   padding: 0 10rpx;
+  height: 100vh;
 }
-.addmemo-textarea{
-  line-height: 52rpx !important;
+
+.addmemo-content {
+  position: relative;
+  top: 45px;
+  height: calc(100% - 90px);
+}
+
+.addmemo-textarea {
+  line-height: 26px !important;
+  height: calc(100vh - 110px) !important
+}
+
+.bottom-fixed {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
