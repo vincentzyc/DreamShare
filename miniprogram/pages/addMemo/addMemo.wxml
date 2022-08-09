@@ -3,7 +3,7 @@
     <van-field model:value="{{ title }}" placeholder="请输入标题" border="{{ false }}" input-align="center" />
   </view>
   <view class="addmemo-content">
-    <van-field input-class="addmemo-textarea" model:value="{{ content }}" type="textarea" placeholder="请输入内容" autosize="{{textareaSize}}" border="{{ false }}" />
+    <van-field input-class="addmemo-textarea" model:value="{{ content }}" type="textarea" placeholder="请输入内容" border="{{ false }}" />
   </view>
-  <van-button type="primary" block bindtap="handleClickSave">保 存</van-button>
+  <van-button type="primary" class="bottom-fixed" block bindtap="handleClickSave">保 存</van-button>
 </view>
