@@ -13,7 +13,6 @@ Page({
     curId: '',
     title: '',
     content: '',
-    textareaSize: { minHeight: 150 }
   },
   handleClickSave() {
     const checkRes = this.verifyData()
