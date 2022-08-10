@@ -141,6 +141,13 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage() {
-
+    return {
+      title: '新增记事'
+    }
+  },
+  onShareTimeline() {
+    return {
+      title: '新增记事'
+    }
   }
 })
