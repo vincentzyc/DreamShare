@@ -1,4 +1,4 @@
-<view>
+<view class="pd10">
   <view wx:if="{{memos.length>0}}">
     <view wx:for="{{memos}}" wx:key="index" class="memo-item" data-index="{{index}}" bindlongpress="handLongpress" bindtap="editMemos">
       <view class="txtover memo-item-title">{{item.title}}</view>
