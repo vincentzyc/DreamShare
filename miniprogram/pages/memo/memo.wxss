@@ -14,9 +14,13 @@
 }
 
 .memo-item {
-  margin: 20rpx;
+  margin: 20rpx 0;
   padding: 20rpx;
   box-shadow: 10rpx 10rpx 20rpx 10rpx #ccc;
+}
+
+.memo-item:first-child {
+  margin-top: 0;
 }
 
 .memo-item-title {
