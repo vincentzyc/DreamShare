@@ -50,7 +50,6 @@ Page({
       const value = wx.getStorageSync(app.localKeys.memoList)
       if (Array.isArray(value) && value.length > 0) {
         const i = value.findIndex(v => v.id === this.data.curId)
-        console.log(i);
         i > -1 ? value.splice(i, 1, data) : value.unshift(data)
         wx.setStorage({
           key: app.localKeys.memoList,
